@@ -1,0 +1,18 @@
+from Holiyay import sign_in
+def cetak_struk_holiyay(username, tempat_wisata,tour_guide, nama_hotel, tanggal_check_in, tanggal_check_out, jumlah_hari, harga_per_hari, harga_total):
+    print("====================================")
+    print("          STRUK HOLIYAY             ")
+    print("====================================")
+    print("Username:", username)
+    print()
+    print("Tempat Wisata: ", tempat_wisata)
+    print("Nama Hotel: ", nama_hotel)
+    print("Tour Guide: ", tour_guide)
+    print("Check-in: ", tanggal_check_in)
+    print("Check-out: ", tanggal_check_out)
+    print("Jumlah Malam: ", jumlah_hari)
+    print("Harga per Malam: ", harga_per_hari)
+    print("------------------------------------")
+    print("Total Biaya: ", harga_total)
+    print("Terima kasih sudah menggunakan program kami")
+    print("====================================")

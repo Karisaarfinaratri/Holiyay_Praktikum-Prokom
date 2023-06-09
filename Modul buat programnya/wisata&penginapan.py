@@ -1,0 +1,6 @@
+print("===="*20)
+a = open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wisata.txt", "r")
+isi_a = a.read()
+print(isi_a)
+a.close()
+wisata2murah=input("silakan memilih tempat wisata: ")
