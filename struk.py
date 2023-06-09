@@ -1,5 +1,5 @@
 from Holiyay import sign_in
-def cetak_struk_traveloka(username, nama_hotel, tanggal_check_in, tanggal_check_out, jumlah_malam, harga_per_malam, jumlah_kamar, total_biaya):
+def cetak_struk_holiyay(username, tempat_wisata,tour_guide, nama_hotel, tanggal_check_in, tanggal_check_out, jumlah_hari, harga_per_hari, harga_total):
     print("====================================")
     print("          STRUK HOLIYAY             ")
     print("====================================")
@@ -16,15 +16,3 @@ def cetak_struk_traveloka(username, nama_hotel, tanggal_check_in, tanggal_check_
     print("Total Biaya: ", harga_total)
     print("Terima kasih sudah menggunakan program kami")
     print("====================================")
-
-# Contoh penggunaan
-nama_hotel = "Hotel XYZ"
-lokasi_hotel = "Jakarta"
-tanggal_check_in = "12 Juni 2023"
-tanggal_check_out = "15 Juni 2023"
-jumlah_malam = 3
-harga_per_malam = 500000
-jumlah_kamar = 2
-total_biaya = jumlah_malam * harga_per_malam * jumlah_kamar
-
-cetak_struk_traveloka(nama_hotel, lokasi_hotel, tanggal_check_in, tanggal_check_out, jumlah_malam, harga_per_malam, jumlah_kamar, total_biaya)
