@@ -1,5 +1,5 @@
 from Holiyay import sign_in
-def cetak_struk_traveloka(nama_hotel, , tanggal_check_in, tanggal_check_out, jumlah_malam, harga_per_malam, jumlah_kamar, total_biaya):
+def cetak_struk_traveloka(username, nama_hotel, tanggal_check_in, tanggal_check_out, jumlah_malam, harga_per_malam, jumlah_kamar, total_biaya):
     print("====================================")
     print("          STRUK HOLIYAY             ")
     print("====================================")
