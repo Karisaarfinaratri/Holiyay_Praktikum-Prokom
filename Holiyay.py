@@ -3,7 +3,7 @@ def sign_up():
     username = input("Masukkan username: ")
     password = input("Masukkan password: ")
 
-    # membuka file txt dengna mode "a" dan menambahkan data yang diinputkan oleh user 
+    # membuka file txt dengan mode "a" dan menambahkan data yang diinputkan oleh user 
     file = open("data_base.txt", "a")
     file.write(f"{username}:{password}\n")
     print("Sign up berhasil!")
@@ -37,7 +37,7 @@ while True:
         # Jika login berhasil, keluar dari loop dan lanjutkan ke program selanjutnya
         break
     else:
-        print("Pilihan tidak valid. Silakan coba lagi.")
+        print("Pilihan tidak valid. Silahkan coba lagi.")
 
 #memilih kategori dan lama wisata
 print(
@@ -52,10 +52,10 @@ if kategori == "1":
     # jika user memilih 2 hari untuk berlibur
     if hari == "2":
         print(
-        '''Silakan memilih rentang budget:
+        '''Silahkan memilih rentang budget:
         1. Kurang dari Rp 400.000,-
         2. Lebih dari Rp 400.000,-''')
-        uang=int(input("masukkan jumlah nomimal budget anda: "))
+        uang=int(input("masukkan jumlah nominal budget anda: "))
         #kurang dari Rp 400.000,-
         if uang==1:
             print("berikut tempat wisata yang dapat anda pilih" )
@@ -79,7 +79,7 @@ if kategori == "1":
             menengah2hotel=input("silahkan memilih tepat penginapan: ")
     # jika user memilih 3 hari untuk berlibur
     elif hari == "3":
-        uang=int(input("masukkan jumlah nomimal: "))
+        uang=int(input("masukkan jumlah nominal: "))
         if uang<=600000:
             print("berikut tempat wisata yang dapat anda pilih" )
             print(data["wisata"])
@@ -104,9 +104,9 @@ if kategori == "1":
             print(data["hotel_harga"]["hotel_mahal"])
             mahal2wisata=input("silahkan memilih tempat wisata: ")
             mahal2hotel=input("silahkan memilih tepat penginapan: ")
-    # jika user memilih 4 hai untuk berlibur
+    # jika user memilih 4 hari untuk berlibur
     elif hari =="4":
-        uang=int(input("masukkan jumlah nomimal: "))
+        uang=int(input("masukkan jumlah nominal: "))
         if uang<=700000:
             murah4=input("silahkan memilih tempat wisata: ")
         elif uang<=900000:
