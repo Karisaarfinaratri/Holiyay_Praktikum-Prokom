@@ -1,6 +1,11 @@
+import csv
 print("===="*20)
-a = open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wisata.txt", "r")
-isi_a = a.read()
-print(isi_a)
-a.close()
-wisata2murah=input("silakan memilih tempat wisata: ")
+def buka_wisata(wisata):
+    with open('datakost.txt') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        for i in csv_reader:
+            if i[1] == wisata:
+                print(f"Nama Tempat Wisata: {i[1]} dengan tiket masuk: {i[0]} memiliki rating: {i[2]}")
+            return True
+        return False
+           
