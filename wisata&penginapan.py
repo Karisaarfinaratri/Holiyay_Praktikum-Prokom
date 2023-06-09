@@ -1,0 +1,5 @@
+print("===="*20)
+a = open("List_Tempat_Wisata.txt", "r")
+isi_a = a.read()
+print(isi_a)
+a.close()
