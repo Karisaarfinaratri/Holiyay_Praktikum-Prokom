@@ -4,7 +4,6 @@ def cetak_struk_holiyay(username, tempat_wisata,tour_guide, nama_hotel, tanggal_
     print("          STRUK HOLIYAY             ")
     print("====================================")
     print("Username:", username)
-    print()
     print("Tempat Wisata: ", tempat_wisata)
     print("Nama Hotel: ", nama_hotel)
     print("Tour Guide: ", tour_guide)
