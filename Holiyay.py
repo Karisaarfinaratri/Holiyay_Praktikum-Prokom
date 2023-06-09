@@ -14,13 +14,13 @@ def sign_in():
     password = input("Masukkan password: ")
 
     #membuka file txt dalam mode "r" dan mengecek kesamaan data input user dan di data_base
-    file = open("data_base.txt", "r")
-    for line in file:
-        stored_username, stored_password = line.strip().split(":")
-        if username == stored_username and password  == stored_password:
-            print("Sign in berhasil!")
-            return
-    print("username atau password salah.")
+    # file = open("data_base.txt", "r")
+    # for line in file:
+    #     stored_username, stored_password = line.strip().split(":")
+    #     if username == stored_username and password  == stored_password:
+    #         print("Sign in berhasil!")
+    #         return
+    # print("username atau password salah.")
 
 # Test fungsi sign-up dan sign-in 
 print("Selamat datang!")
