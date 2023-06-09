@@ -1,4 +1,4 @@
-#membuat fungsi sign up
+# membuat fungsi sign up
 def sign_up():
     username = input("Masukkan username: ")
     password = input("Masukkan password: ")
@@ -8,19 +8,19 @@ def sign_up():
     file.write(f"{username}:{password}\n")
     print("Sign up berhasil!")
 
-#membuat fungsi sign
+# membuat fungsi sign
 def sign_in():
     username = input("Masukkan username: ")
     password = input("Masukkan password: ")
 
-    #membuka file txt dalam mode "r" dan mengecek kesamaan data input user dan di data_base
-    # file = open("data_base.txt", "r")
-    # for line in file:
-    #     stored_username, stored_password = line.strip().split(":")
-    #     if username == stored_username and password  == stored_password:
-    #         print("Sign in berhasil!")
-    #         return
-    # print("username atau password salah.")
+    # membuka file txt dalam mode "r" dan mengecek kesamaan data input user dan di data_base
+    file = open("data_base.txt", "r")
+    for line in file:
+        stored_username, stored_password = line.strip().split(":")
+        if username == stored_username and password  == stored_password:
+            print("Sign in berhasil!")
+            return
+    print("username atau password salah.")
 
 # Test fungsi sign-up dan sign-in 
 print("Selamat datang!")
