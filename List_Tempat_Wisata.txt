@@ -17,3 +17,5 @@ harga,wisata,rating
 15000,Air Terjun Sekumpul,3.9
 5000,Pantai Tanjung Benoa,4.4
 30000,Danau Beratan Bedugul,4.7
+0,Pantai Sanur,4.5
+10000,Nusa Penida,4.7
