@@ -1,4 +1,3 @@
-harga,wisata,rating
 0,Pantai Kuta,4.5
 52000,Dream Museum Zone,4.0
 230000,Waterboom Bali,4.7
