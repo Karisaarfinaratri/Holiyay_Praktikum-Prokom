@@ -18,7 +18,7 @@ def main():
             budget=input("budget (1/2): ")
             if budget == "1":
                 for i in csv_reader:
-                        if int(i[0]) < 230000  :
+                        if int(i[1]) < 230000  :
                             daftar_hotel.append(i)
                             print(f'''
 Nama Hotel: {i[2]}
@@ -26,7 +26,7 @@ Harga/malam: {i[1]}
 Rating: {i[3]}''')
             elif budget == "2":
                  for i in csv_reader:
-                        if int(i[0]) > 230000  :
+                        if int(i[1]) > 230000  :
                             daftar_hotel.append(i)
                             print(f'''
 Nama Hotel: {i[2]}
@@ -41,7 +41,7 @@ Rating: {i[3]}''')
             budget=input("budget (1/2): ")
             if budget == "1":
                 for i in csv_reader:
-                        if int(i[0]) < 220000  :
+                        if int(i[1]) < 220000  :
                             daftar_hotel.append(i)
                             print(f'''
 Nama Hotel: {i[2]}
@@ -49,7 +49,7 @@ Harga/malam: {i[1]}
 Rating: {i[3]}''')                            
             elif budget == "2":
                  for i in csv_reader:
-                        if int(i[0]) > 220000  :
+                        if int(i[1]) > 220000  :
                             daftar_hotel.append(i)
                             print(f'''
 Nama Hotel: {i[2]}
@@ -64,7 +64,7 @@ Rating: {i[3]}''')
             budget=input("budget (1/2): ")
             if budget == "1":
                 for i in csv_reader:
-                        if int(i[0]) < 220000  :
+                        if int(i[1]) < 220000  :
                             daftar_hotel.append(i)
                             print(f'''
 Nama Hotel: {i[2]}
@@ -72,7 +72,7 @@ Harga/malam: {i[1]}
 Rating: {i[3]}''')
             elif budget == "2":
                  for i in csv_reader:
-                        if int(i[0]) > 220000  :
+                        if int(i[1]) > 220000  :
                             daftar_hotel.append(i)
                             print(f'''
 Nama Hotel: {i[2]}
