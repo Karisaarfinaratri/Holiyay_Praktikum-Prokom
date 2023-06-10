@@ -21,17 +21,17 @@ def main():
                         if int(i[1]) < 230000  :
                             daftar_hotel.append(i)
                             print(f'''
-Nama Hotel: {i[2]}
-Harga/malam: {i[1]}
-Rating: {i[3]}''')
+{i[0]}. Nama Hotel: {i[2]}
+    Harga/malam: {i[1]}
+    Rating: {i[3]}''')   
             elif budget == "2":
                  for i in csv_reader:
                         if int(i[1]) > 230000  :
                             daftar_hotel.append(i)
                             print(f'''
-Nama Hotel: {i[2]}
-Harga/malam: {i[1]}
-Rating: {i[3]}''')
+{i[0]}. Nama Hotel: {i[2]}
+    Harga/malam: {i[1]}
+    Rating: {i[3]}''')   
 
         elif hari == "2":
             daftar_hotel=[]
@@ -44,17 +44,17 @@ Rating: {i[3]}''')
                         if int(i[1]) < 220000  :
                             daftar_hotel.append(i)
                             print(f'''
-Nama Hotel: {i[2]}
-Harga/malam: {i[1]}
-Rating: {i[3]}''')                            
+{i[0]}. Nama Hotel: {i[2]}
+    Harga/malam: {i[1]}
+    Rating: {i[3]}''')                            
             elif budget == "2":
                  for i in csv_reader:
                         if int(i[1]) > 220000  :
                             daftar_hotel.append(i)
                             print(f'''
-Nama Hotel: {i[2]}
-Harga/malam: {i[1]}
-Rating: {i[3]}''')
+{i[0]}. Nama Hotel: {i[2]}
+    Harga/malam: {i[1]}
+    Rating: {i[3]}''')
          
         elif hari == "3":
             daftar_hotel=[]
@@ -67,17 +67,17 @@ Rating: {i[3]}''')
                         if int(i[1]) < 220000  :
                             daftar_hotel.append(i)
                             print(f'''
-Nama Hotel: {i[2]}
-Harga/malam: {i[1]}
-Rating: {i[3]}''')
+{i[0]}. Nama Hotel: {i[2]}
+    Harga/malam: {i[1]}
+    Rating: {i[3]}''')   
             elif budget == "2":
                  for i in csv_reader:
                         if int(i[1]) > 220000  :
                             daftar_hotel.append(i)
                             print(f'''
-Nama Hotel: {i[2]}
-Harga/malam: {i[1]}
-Rating: {i[3]}''')
+{i[0]}. Nama Hotel: {i[2]}
+    Harga/malam: {i[1]}
+    Rating: {i[3]}''')   
 
             
 
