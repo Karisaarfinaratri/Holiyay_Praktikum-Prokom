@@ -1,43 +1,4 @@
-# membuat fungsi sign up
-def sign_up():
-    username = input("Masukkan username: ")
-    password = input("Masukkan password: ")
 
-    # membuka file txt dengan mode "a" dan menambahkan data yang diinputkan oleh user 
-    file = open("data_base.txt", "a")
-    file.write(f"{username}:{password}\n")
-    print("Sign up berhasil!")
-
-# membuat fungsi sign
-def sign_in():
-    username = input("Masukkan username: ")
-    password = input("Masukkan password: ")
-
-    # membuka file txt dalam mode "r" dan mengecek kesamaan data input user dan di data_base
-    file = open("data_base.txt", "r")
-    for line in file:
-        stored_username, stored_password = line.strip().split(":")
-        if username == stored_username and password  == stored_password:
-            print("Sign in berhasil!")
-            return
-    print("username atau password salah.")
-
-# Test fungsi sign-up dan sign-in 
-print("Selamat datang!")
-while True:
-    print(
-    '''Silakan memilih opsi:
-    1. Sign up
-    2. sign in''')
-    pilih = input("Masukkan pilihan (1/2): ")
-    if pilih == "1":
-        sign_up()
-    elif pilih == "2":
-        sign_in()
-        # Jika login berhasil, keluar dari loop dan lanjutkan ke program selanjutnya
-        break
-    else:
-        print("Pilihan tidak valid. Silahkan coba lagi.")
 
 #memilih kategori dan lama wisata
 print(
