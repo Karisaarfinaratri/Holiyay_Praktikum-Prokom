@@ -1,3 +1,4 @@
+no,harga,nama,rating
 1,110000,Easton Kuta,3.7
 2,130000,Hotel Segara Sadhu Inn,4
 3,200000,Hotel The Hill Ungasan,4
