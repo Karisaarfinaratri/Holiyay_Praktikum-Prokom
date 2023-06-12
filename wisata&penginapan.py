@@ -120,8 +120,9 @@ with open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wi
                         print(f'''
 {j[0]}. Nama Tempat Wisata: {j[2]}
     HTM: {j[1]}
-    Rating: {j[3]}''')  
-            pilih1=input("silakan memilih tempat pertama: ")
+    Rating: {j[3]}''') 
+            for pilih in range (1):
+                pilih1=input("silakan memilih tempat pertama: ")
 
         elif jumlah =="2":
             daftar_wisata=[]
@@ -131,8 +132,8 @@ with open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wi
 {j[0]}. Nama Tempat Wisata: {j[2]}
     HTM: {j[1]}
     Rating: {j[3]}''')  
-            pilih1=input("silakan memilih tempat pertama: ")
-            pilih2=input("silakan memilih tempat kedua: ")
+            for pilih in range (2):
+                pilih=input("silakan memilih tempat pertama: ")
 
         elif jumlah =="3":
             daftar_wisata=[]
@@ -142,9 +143,8 @@ with open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wi
 {j[0]}. Nama Tempat Wisata: {j[2]}
     HTM: {j[1]}
     Rating: {j[3]}''')   
-            pilih1=input("silakan memilih tempat pertama: ")
-            pilih2=input("silakan memilih tempat kedua: ")
-            pilih3=input("silakan memilih tempat ketiga: ")
+            for pilih in range (3):
+                pilih=input("silakan memilih tempat wisata: ")
 
         elif jumlah =="4":
             daftar_wisata=[]
@@ -154,10 +154,8 @@ with open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wi
 {j[0]}. Nama Tempat Wisata: {j[2]}
     HTM: {j[1]}
     Rating: {j[3]}''')    
-            pilih1=input("silakan memilih tempat pertama: ")
-            pilih2=input("silakan memilih tempat kedua: ")
-            pilih3=input("silakan memilih tempat ketiga: ")
-            pilih4=input("silakan memilih tempat keempat: ")
+            for pilih in range (4):
+                pilih=input("silakan memilih tempat pertama: ")
                    
 # if __name__ == "__main__":
     # main()
