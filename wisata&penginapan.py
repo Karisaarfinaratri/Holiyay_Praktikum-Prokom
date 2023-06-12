@@ -24,7 +24,8 @@ def main():
                             print(f'''
 {i[0]}. Nama Hotel: {i[2]}
     Harga/malam: {i[1]}
-    Rating: {i[3]}''')  
+    Rating: {i[3]}''')      
+
             elif budget == "2":
                  for i in csv_reader:
                         if int(i[1]) >= 230000  :
@@ -101,3 +102,4 @@ for ele in daftar_hotel:
     print("Hotel terpilih")
     print(daftar_hotel[int(pilihan)-1])
     break
+
