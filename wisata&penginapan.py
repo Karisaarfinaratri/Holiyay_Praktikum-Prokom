@@ -1,7 +1,13 @@
 import csv
+def pilih():
+      pilihan=input("masukkan nomor: ")
+      file = open("hotelsimpan.txt","a")
+      file.write(f"{pilihan}\n")
+      file.close()
 
 def main():
     global daftar_hotel
+    global daftar_wisata
     print(
     '''Silakan memilih jumlah hari:
     1. 2 hari
@@ -49,7 +55,8 @@ def main():
                             print(f'''
 {i[0]}. Nama Hotel: {i[2]}
     Harga/malam: {i[1]}
-    Rating: {i[3]}''')                            
+    Rating: {i[3]}''')        
+                                   
             elif budget == "2":
                  for i in csv_reader:
                         if int(i[1]) >= 220000  :
@@ -84,21 +91,23 @@ def main():
         
 if __name__ == "__main__":
     main()
+    pilih()
 
-ind_hotel = [ele[0] for ele in daftar_hotel]
-for ele in daftar_hotel:
-    # print(ele)
 
-    # while True:
-        try:
-            pilihan = input("Input hotel pilihan ")
-            assert pilihan in ind_hotel, "Hotel tidak ada pada filter"
-            break
-        except AssertionError as er:
-            print(er)
+# ind_hotel = [ele[0] for ele in daftar_hotel]
+# for ele in daftar_hotel:
+#     # print(ele)
 
-print("Hotel terpilih")
-print(daftar_hotel[int(pilihan)-1])
+#     # while True:
+#         try:
+#             pilihan = input("Input hotel pilihan ")
+#             assert pilihan in ind_hotel, "Hotel tidak ada pada filter"
+#             break
+#         except AssertionError as er:
+#             print(er)
+
+# print("Hotel terpilih")
+# print(daftar_hotel[int(pilihan)-1])
     
 
 print(
