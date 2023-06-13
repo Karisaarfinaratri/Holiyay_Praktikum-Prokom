@@ -101,8 +101,6 @@ print("Hotel terpilih")
 print(daftar_hotel[int(pilihan)-1])
     
 
-# def wisata():
-#     global daftar_wisata
 print(
     '''Silakan memilih jumlah tempat wisata:
     1. 1 tempat
