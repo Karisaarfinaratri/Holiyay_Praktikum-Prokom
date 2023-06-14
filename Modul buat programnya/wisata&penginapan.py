@@ -8,7 +8,7 @@ def main():
     2. 3 hari
     3. 4 hari''')
     hari=input("hari (1/2/3): ")
-    with open("D:/Matkul Prokom/TUBES PROKOM/Holiyay_Praktikum-Prokom/List_Hotel.txt") as csv_file:
+    with open("C:\Menjadi Hacker Sejati\Holiyay_Praktikum-Prokom\List_Hotel.txt") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         
 
@@ -110,7 +110,7 @@ print(
     3. 3 tempat
     4. 4 tempat''')
 jumlah=input("jumlah tempat (1/2/..): ")
-with open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wisata.txt") as csv_file2:
+with open("C:\Menjadi Hacker Sejati\Holiyay_Praktikum-Prokom\List_Tempat_Wisata.txt") as csv_file2:
         csv_reader2 = csv.reader(csv_file2, delimiter=',')
 
         if jumlah =="1":
