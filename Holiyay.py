@@ -82,3 +82,25 @@ def pilih_pemandu():
     pemandu_dict["harga_pemandu"] = harga_pemandu
 
     return pemandu_dict
+
+#Mencentak Struk Pembayaran
+
+def cetak_struk_holiyay(
+        username, tempat_wisata, harga_tempat_wisata, hotel_pilihan, harga_per_malam, tour_guide, harga_pemandu, hari, harga_total, input_biaya
+    ):
+    print("="*35)
+    print("          STRUK HOLIYAY             ")
+    print("="*35)
+    print("Username           :", username)
+    print("Tempat Wisata      : ", tempat_wisata)
+    print("Harga Tempat Wisata: ", harga_tempat_wisata)
+    print("Nama Hotel         : ", hotel_pilihan)
+    print("Harga per Malam    : ", harga_per_malam)
+    print("Jumlah hari        : ", tour_guide)
+    print("Tour Guide         : ", harga_pemandu)
+    print("Harga Tour Guide   : ", hari)
+    print("-"*35)
+    print("Total Biaya        : ", harga_total)
+    print("Biaya yang dibayar : ", input_biaya)
+    print("="*35)
+    print("\nTerima kasih sudah menggunakan program kami")
