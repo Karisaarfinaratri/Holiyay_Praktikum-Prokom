@@ -1,6 +1,4 @@
 import csv
-from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
 
 def sign_up():
     global username
