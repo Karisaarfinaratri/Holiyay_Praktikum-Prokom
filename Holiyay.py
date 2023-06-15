@@ -104,3 +104,47 @@ def cetak_struk_holiyay(
     print("Biaya yang dibayar : ", input_biaya)
     print("="*35)
     print("\nTerima kasih sudah menggunakan program kami")
+
+# Program
+def menu_awal():
+    print("Selamat datang di Holiyay!")
+    while True:
+        try:
+            print(
+'''Silakan memilih opsi:
+1. Sign up
+2. Sign in''')
+            pilih = input("Masukkan pilihan (1/2): ")
+            if pilih == "1":
+                sign_up()
+            elif pilih == "2":
+                sign_in()
+                break
+            else:
+                raise ValueError("\nPilihan yang dimasukkan tidak valid, silakan pilih 1 atau 2.")
+            
+            # Program selanjutnya setelah sign_up() atau sign_in()
+        
+        except ValueError as e:
+            print("#404 Not Found#", str(e))
+            continue
+menu_awal()
+
+
+while True:
+    try:
+        print(
+'''\nSilakan memilih jumlah hari:
+2 hari
+3 hari
+4 hari''')
+        hari = int(input("Silakan memilih berapa lama waktu berwisata (2/3/4): "))
+        
+        if hari not in [2, 3, 4]:
+            raise ValueError("\nPilihan jumlah hari yang dimasukkan tidak valid, silakan memilih jumlah hari 2, 3, atau 4.")
+        
+        # Lanjutkan dengan program selanjutnya
+        break
+    
+    except ValueError as e:
+        print("#404 Not Found#", str(e))
