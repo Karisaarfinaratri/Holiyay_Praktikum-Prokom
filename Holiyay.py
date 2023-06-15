@@ -10,22 +10,33 @@ def sign_up():
     file.write(f"{username}:{password}\n")
     print("Sign up berhasil!")
 
+#==========================================================================================
+
 def sign_in():
-    global username
-    username = input("Masukkan username: ")
-    password = input("Masukkan password: ")
-    file = open("data_base.txt", "r")
-    for line in file:
-        stored_username, stored_password = line.strip().split(":")
-        if username == stored_username and password == stored_password:
-            print("Sign in berhasil!")
-            return
-    print("username atau password salah.")
-    sign_in()
+    try:
+        global username
+        username = input("Masukkan username: ")
+        password = input("Masukkan password: ")
+        file = open("data_base.txt", "r")
+        for line in file:
+            stored_username, stored_password = line.strip().split(":")
+            if username == stored_username and password == stored_password:
+                print("Sign in berhasil!")
+                return
+            elif username != stored_username and password != stored_password:
+                 raise ValueError("\nAnda tidak memiliki Akun")
+            break
+    except ValueError as e:
+            print("Akun anda tidak ditemukan, silakan sign up\n", str(e))
+            sign_in()
+
+#==========================================================================================
 
 def keluar():
      print("Terima Kasih sudah menggunakan Holiyay")
      exit()
+
+#==========================================================================================
 
 def get_filtered_tempat_wisata_dan_hotel(cek_total_harga):
     tempat_wisata_dan_hotel_dict = {}
@@ -72,12 +83,17 @@ def get_filtered_tempat_wisata_dan_hotel(cek_total_harga):
 
     return tempat_wisata_dan_hotel_dict
 
+#==========================================================================================
+
 def bank():
     print('''\nSilahkan memilih jenis bank:
             1. Bank BRI
             2. Bank BCA
             3. Bank Mandiri''')
     jenis_pembayaran = int(input("Masukkan jenis bank (1/2/3): "))
+    
+
+#==========================================================================================
 
 def pilih_pemandu():
     print('''
@@ -113,7 +129,7 @@ Silahkan pilih pemandu Anda:
     harga_pemandu = None
 
     while pemandu_terpilih is None:
-        pilihan = input("Masukkan pilihan Anda (1/2/3): ")
+        pilihan = input("\nMasukkan pilihan Anda (1/2/3/4): ")
 
         if pilihan == "1":
             print("Anda memilih pemandu A.")
@@ -129,16 +145,23 @@ Silahkan pilih pemandu Anda:
             print("Anda memilih pemandu C.")
             pemandu_terpilih = "C"
             harga_pemandu = 120000
+
+        elif pilihan =="4":
+            print("Anda tidak menggunakan jasa pemandu wisata")
+            pemandu_terpilih = "tanpa pemandu"
+            harga_pemandu = 0
            
         else:
-            print("Pilihan tidak valid. Silakan pilih antara A, B, atau C.")
+            print("Pilihan tidak valid. Silakan pilih antara 1, 2, 3, atau 4.")
 
-    print("Selamat Anda telah berhasil memilih pemandu", pemandu_terpilih)
+    print("Selamat! Pilihan Anda telah berhasil disimpan\n")
 
     pemandu_dict["pemandu_terpilih"] = pemandu_terpilih
     pemandu_dict["harga_pemandu"] = harga_pemandu
 
     return pemandu_dict
+    
+#==========================================================================================
 
 def cetak_struk_holiyay(
         username, tempat_wisata, harga_tempat_wisata, hotel_pilihan, 
@@ -146,19 +169,21 @@ def cetak_struk_holiyay(
     print("="*35)
     print("          STRUK HOLIYAY             ")
     print("="*35)
-    print("Username           : ", username)
-    print("Tempat Wisata      : ", tempat_wisata)
-    print("Harga Tempat Wisata: ", harga_tempat_wisata)
-    print("Nama Hotel         : ", hotel_pilihan)
-    print("Harga per Malam    : ", harga_per_malam)
-    print("Jumlah hari        : ", hari)
-    print("Tour Guide         : ", pemandu_terpilih)
-    print("Harga Tour Guide   : ", harga_pemandu)
+    print("Username            : ", username)
+    print("Tempat Wisata       : ", tempat_wisata)
+    print("Harga Tempat Wisata : ", harga_tempat_wisata)
+    print("Nama Hotel          : ", hotel_pilihan)
+    print("Harga per Malam     : ", harga_per_malam)
+    print("Jumlah hari         : ", hari)
+    print("Tour Guide          : ", pemandu_terpilih)
+    print("Harga Tour Guide    : ", harga_pemandu)
     print("-"*35)
-    print("Total Biaya        : ", harga_total)
-    print("Biaya yang dibayar : ", input_biaya)
+    print("Total Biaya         : ", harga_total)
+    print("Biaya yang dibayar  : ", input_biaya)
     print("="*35)
-    print("\nTerima kasih sudah menggunakan program kami")
+    print("\nTerima kasih sudah menggunakan program Holiyay")
+
+#==========================================================================================
 
 def lama_libur():
     while True:
@@ -281,6 +306,9 @@ def lama_libur():
                     menu_awal()                
                 else:
                     bank()
+   
+
+#==========================================================================================
 
 def menu_awal():
     print("Selamat datang di Holiyay!")
@@ -291,7 +319,7 @@ def menu_awal():
 1. Sign up
 2. Sign in
 3. Keluar''')
-            pilih = input("Masukkan pilihan (1/2): ")
+            pilih = input("Masukkan pilihan (1/2/3): ")
             if pilih == "1":
                 sign_up()
                 menu_awal()
@@ -302,7 +330,7 @@ def menu_awal():
             elif pilih == "3":
                  keluar()
             else:
-                raise ValueError("\nPilihan yang dimasukkan tidak valid, silakan pilih 1 atau 2.")
+                raise ValueError("\nPilihan yang dimasukkan tidak valid, silakan pilih 1 atau 2.")        
         except ValueError as e:
             print("#404 Not Found#", str(e))
             continue
