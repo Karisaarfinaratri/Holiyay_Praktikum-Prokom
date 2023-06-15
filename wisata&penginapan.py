@@ -1,9 +1,4 @@
 import csv
-def pilih():
-      pilihan=input("masukkan nomor: ")
-      file = open("hotelsimpan.txt","a")
-      file.write(f"{pilihan}\n")
-      file.close()
 
 def main():
     global daftar_hotel
@@ -16,8 +11,7 @@ def main():
     hari=input("hari (1/2/3): ")
     with open("D:/Matkul Prokom/TUBES PROKOM/Holiyay_Praktikum-Prokom/List_Hotel.txt") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
-        
-
+    
         if hari == "1":
             daftar_hotel=[]
             print('''silakan memilih rentang budget anda: 
@@ -32,7 +26,7 @@ def main():
 {i[0]}. Nama Hotel: {i[2]}
     Harga/malam: {i[1]}
     Rating: {i[3]}''')      
-
+                
             elif budget == "2":
                  for i in csv_reader:
                         if int(i[1]) >= 230000  :
@@ -109,60 +103,61 @@ if __name__ == "__main__":
 # print("Hotel terpilih")
 # print(daftar_hotel[int(pilihan)-1])
     
+def wisata():
+      
+    print(
+        '''Silakan memilih jumlah tempat wisata:
+        1. 1 tempat
+        2. 2 tempat
+        3. 3 tempat
+        4. 4 tempat''')
+    jumlah=input("jumlah tempat (1/2/..): ")
+    with open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wisata.txt") as csv_file2:
+            csv_reader2 = csv.reader(csv_file2, delimiter=',')
 
-print(
-    '''Silakan memilih jumlah tempat wisata:
-    1. 1 tempat
-    2. 2 tempat
-    3. 3 tempat
-    4. 4 tempat''')
-jumlah=input("jumlah tempat (1/2/..): ")
-with open("D:\Matkul Prokom\TUBES PROKOM\Holiyay_Praktikum-Prokom\List_Tempat_Wisata.txt") as csv_file2:
-        csv_reader2 = csv.reader(csv_file2, delimiter=',')
+            if jumlah =="1":
+                daftar_wisata=[]
+                for j in csv_reader2:
+                            daftar_wisata.append(j)
+                            print(f'''
+    {j[0]}. Nama Tempat Wisata: {j[2]}
+        HTM: {j[1]}
+        Rating: {j[3]}''') 
+                for pilih in range (1):
+                    pilih1=input("silakan memilih tempat pertama: ")
 
-        if jumlah =="1":
-            daftar_wisata=[]
-            for j in csv_reader2:
-                        daftar_wisata.append(j)
-                        print(f'''
-{j[0]}. Nama Tempat Wisata: {j[2]}
-    HTM: {j[1]}
-    Rating: {j[3]}''') 
-            for pilih in range (1):
-                pilih1=input("silakan memilih tempat pertama: ")
+            elif jumlah =="2":
+                daftar_wisata=[]
+                for j in csv_reader2:
+                            daftar_wisata.append(j)
+                            print(f'''
+    {j[0]}. Nama Tempat Wisata: {j[2]}
+        HTM: {j[1]}
+        Rating: {j[3]}''')  
+                for pilih in range (2):
+                    pilih=input("silakan memilih tempat pertama: ")
 
-        elif jumlah =="2":
-            daftar_wisata=[]
-            for j in csv_reader2:
-                        daftar_wisata.append(j)
-                        print(f'''
-{j[0]}. Nama Tempat Wisata: {j[2]}
-    HTM: {j[1]}
-    Rating: {j[3]}''')  
-            for pilih in range (2):
-                pilih=input("silakan memilih tempat pertama: ")
+            elif jumlah =="3":
+                daftar_wisata=[]
+                for j in csv_reader2:
+                            daftar_wisata.append(j)
+                            print(f'''
+    {j[0]}. Nama Tempat Wisata: {j[2]}
+        HTM: {j[1]}
+        Rating: {j[3]}''')   
+                for pilih in range (3):
+                    pilih=input("silakan memilih tempat wisata: ")
 
-        elif jumlah =="3":
-            daftar_wisata=[]
-            for j in csv_reader2:
-                        daftar_wisata.append(j)
-                        print(f'''
-{j[0]}. Nama Tempat Wisata: {j[2]}
-    HTM: {j[1]}
-    Rating: {j[3]}''')   
-            for pilih in range (3):
-                pilih=input("silakan memilih tempat wisata: ")
-
-        elif jumlah =="4":
-            daftar_wisata=[]
-            for j in csv_reader2:
-                        daftar_wisata.append(j)
-                        print(f'''
-{j[0]}. Nama Tempat Wisata: {j[2]}
-    HTM: {j[1]}
-    Rating: {j[3]}''')    
-            for pilih in range (4):
-                pilih=input("silakan memilih tempat pertama: ")
-                   
+            elif jumlah =="4":
+                daftar_wisata=[]
+                for j in csv_reader2:
+                            daftar_wisata.append(j)
+                            print(f'''
+    {j[0]}. Nama Tempat Wisata: {j[2]}
+        HTM: {j[1]}
+        Rating: {j[3]}''')    
+                for pilih in range (4):
+                    pilih=input("silakan memilih tempat pertama: ")
+                    
 # if __name__ == "__main__":
     # main()
