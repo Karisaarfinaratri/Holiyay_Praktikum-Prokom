@@ -1,21 +1,19 @@
-# membuat fungsi sign up
+import csv
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+
 def sign_up():
     global username
     username = input("Masukkan username: ")
     password = input("Masukkan password: ")
-
-    # membuka file txt dengan mode "a" dan menambahkan data yang diinputkan oleh user
     file = open("data_base.txt", "a")
     file.write(f"{username}:{password}\n")
     print("Sign up berhasil!")
 
-# membuat fungsi sign in
 def sign_in():
     global username
     username = input("Masukkan username: ")
     password = input("Masukkan password: ")
-
-    # membuka file txt dalam mode "r" dan mengecek kesamaan data input user dan di data_base
     file = open("data_base.txt", "r")
     for line in file:
         stored_username, stored_password = line.strip().split(":")
@@ -25,7 +23,55 @@ def sign_in():
     print("username atau password salah.")
     sign_in()
 
-#Memilih Pemandu wisata
+def keluar():
+     print("Terima Kasih sudah menggunakan Holiyay")
+     exit()
+
+def get_filtered_tempat_wisata_dan_hotel(cek_total_harga):
+    tempat_wisata_dan_hotel_dict = {}
+    tempat_wisata_list = []
+    hotel_list = []
+    filtered_tempat_wisata_list = []
+    filtered_hotel_list = []
+
+    with open("tempat_wisata.txt", "r") as file:
+        tempat_wisata_reader = csv.reader(file, delimiter=',')
+        next(tempat_wisata_reader)
+
+        for row in tempat_wisata_reader:
+            tempat_wisata_list.append(row)
+
+    with open("hotel.txt", "r") as file:
+        hotel_reader = csv.reader(file, delimiter=',')
+        next(hotel_reader)
+
+        for row in hotel_reader:
+            hotel_list.append(row)
+
+    tempat_wisata_list.sort(key=lambda element: int(element[0]))
+    hotel_list.sort(key=lambda element: int(element[0]))
+
+    for tempat_wisata in tempat_wisata_list:
+        for hotel in hotel_list:
+            if cek_total_harga(int(tempat_wisata[0]) + int(hotel[0])):
+                if not tempat_wisata in filtered_tempat_wisata_list:
+                    filtered_tempat_wisata_list.append(tempat_wisata)
+                
+                if not hotel in filtered_hotel_list:
+                    filtered_hotel_list.append(hotel)
+            else:
+                if int(hotel[0]) > int(tempat_wisata[0]):
+                    if hotel in filtered_hotel_list:
+                        filtered_hotel_list.remove(hotel)
+                else:
+                    if tempat_wisata in filtered_tempat_wisata_list:
+                        filtered_tempat_wisata_list.remove(tempat_wisata)
+
+    tempat_wisata_dan_hotel_dict ["tempat_wisata"] = filtered_tempat_wisata_list
+    tempat_wisata_dan_hotel_dict ["hotel"] = filtered_hotel_list
+
+    return tempat_wisata_dan_hotel_dict
+
 def pilih_pemandu():
     print('''
     Selamat datang di program pemilihan pemandu wisata!
@@ -83,7 +129,7 @@ def pilih_pemandu():
 
     return pemandu_dict
 
-#Mencentak Struk Pembayaran
+
 
 def cetak_struk_holiyay(
         username, tempat_wisata, harga_tempat_wisata, hotel_pilihan, harga_per_malam, tour_guide, harga_pemandu, hari, harga_total, input_biaya
@@ -105,7 +151,7 @@ def cetak_struk_holiyay(
     print("="*35)
     print("\nTerima kasih sudah menggunakan program kami")
 
-# Program
+
 def menu_awal():
     print("Selamat datang di Holiyay!")
     while True:
@@ -123,7 +169,7 @@ def menu_awal():
             else:
                 raise ValueError("\nPilihan yang dimasukkan tidak valid, silakan pilih 1 atau 2.")
             
-            # Program selanjutnya setelah sign_up() atau sign_in()
+           
         
         except ValueError as e:
             print("#404 Not Found#", str(e))
